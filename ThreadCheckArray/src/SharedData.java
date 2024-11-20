@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 /**
- * The SharedData class is used to manage shared data, including an array of ArrayLists, 
- * a winArray to store boolean flags, and a flag variable to track a state.
+ * The SharedData class holds shared data such as an ArrayList of integers, a win array to store boolean flags, 
+ * and a flag variable to track a particular state. It provides getter and setter methods for each of these fields.
  */
-public class SharedData 
-{
-    /** An array of ArrayLists of integers. */
-    private ArrayList<Integer>[] array;
+public class SharedData {
+
+    /** An ArrayList to store integers in the shared data. */
+    private ArrayList<Integer> array;
 
     /** An array of boolean values indicating win conditions. */
     private boolean[] winArray;
@@ -19,13 +19,13 @@ public class SharedData
     private final int b;
 
     /**
-     * Constructor to initialize the SharedData object with an ArrayList and an integer.
+     * Constructor to initialize the SharedData object with an ArrayList of integers and an integer value.
      * 
-     * @param array The ArrayList of integers to initialize the array.
-     * @param b A threshold or constant value used in the object.
+     * @param array The ArrayList of integers to initialize the shared data array.
+     * @param b A constant integer value used in the object.
      */
     public SharedData(ArrayList<Integer> array, int b) {
-        this.array = new ArrayList[] {array}; // Assuming a single ArrayList is passed in, wrapped in an array.
+        this.array = array;
         this.b = b;
     }
 
@@ -34,8 +34,7 @@ public class SharedData
      *
      * @return The array of boolean values indicating win conditions.
      */
-    public boolean[] getWinArray() 
-    {
+    public boolean[] getWinArray() {
         return winArray;
     }
 
@@ -44,19 +43,17 @@ public class SharedData
      * 
      * @param winArray The array of boolean values indicating win conditions.
      */
-    public void setWinArray(boolean[] winArray) 
-    {
+    public void setWinArray(boolean[] winArray) {
         this.winArray = winArray;
     }
 
     /**
      * Gets the ArrayList from the shared data.
      *
-     * @return The first ArrayList of integers in the shared data.
+     * @return The ArrayList of integers in the shared data.
      */
-    public ArrayList<Integer> getArray() 
-    {
-        return array[0]; // Returning the first ArrayList from the array.
+    public ArrayList<Integer> getArray() {
+        return array;
     }
 
     /**
@@ -64,8 +61,7 @@ public class SharedData
      * 
      * @return The value of the constant integer 'b'.
      */
-    public int getB() 
-    {
+    public int getB() {
         return b;
     }
 
@@ -74,8 +70,7 @@ public class SharedData
      *
      * @return The current state of the flag.
      */
-    public boolean getFlag() 
-    {
+    public boolean getFlag() {
         return flag;
     }
 
@@ -88,4 +83,5 @@ public class SharedData
         this.flag = flag;
     }
 }
+
 
